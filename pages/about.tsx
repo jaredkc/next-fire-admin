@@ -3,30 +3,23 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>NextFireAdmin</title>
+        <title>NextFireAdmin / About</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-          , <br />
-          running on Firebase!
-        </h1>
+        <h1 className="text-6xl font-bold">About NextFireAdmin</h1>
 
         <p className="mt-3 text-2xl">
-          See the{' '}
-          <Link href="/about">
-            <a className='underline'>about page</a>
-          </Link>{' '}
-          for routing example.
+          Back to the{' '}
+          <Link href="/">
+            <a className='underline'>home page</a>
+          </Link>
+          .
         </p>
       </main>
 
@@ -45,4 +38,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default About;
