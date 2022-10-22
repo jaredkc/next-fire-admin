@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
+import toast from 'react-hot-toast';
 
 const Home: NextPage = () => {
   return (
@@ -24,10 +24,11 @@ const Home: NextPage = () => {
         <p className="mt-3 text-2xl">
           See the{' '}
           <Link href="/about">
-            <a className='underline'>about page</a>
+            <a className="underline">about page</a>
           </Link>{' '}
           for routing example.
         </p>
+        <button onClick={() => toast.success('hello toast!')}>Toast Notification</button>
       </main>
     </div>
   );
