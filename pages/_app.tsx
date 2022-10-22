@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import { Toaster } from 'react-hot-toast';
+import Navbar from '../components/Navbar';
 import { UserContext } from '../lib/context';
 import { useUserData } from '../lib/hooks';
 import '../styles/globals.css';
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <UserContext.Provider value={userData}>
+        <Navbar />
         <Component {...pageProps} />
         <Toaster />
       </UserContext.Provider>
