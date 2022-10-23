@@ -17,13 +17,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between w-full px-6 py-4 border-b">
+    <nav className="flex items-center justify-between w-full px-6 py-4 bg-white border-b">
       <Link href="/">
         <a>AdminApp</a>
       </Link>
 
       {user && (
-        <div>
+        <div className="flex items-center gap-4">
           <button onClick={signOutNow}>Sign Out</button>
           <Image
             src={user?.photoURL || '/fpo-user.jpg'}

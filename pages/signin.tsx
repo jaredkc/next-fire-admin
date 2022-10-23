@@ -7,24 +7,23 @@ import { useContext } from 'react';
 import { UserContext } from '../lib/context';
 import { auth, googleAuthProvider } from '../lib/firebase';
 
+const buttonCommn =
+  'inline-flex gap-3 items-center px-6 py-3 text-base font-medium border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2';
+const buttonLight = `bg-white hover:bg-gray-50 ${buttonCommn}`;
+const buttonPrimary = `bg-indigo-600 text-white border-transparent hover:bg-indigo-700 ${buttonCommn}`;
+
 const SignIn: NextPage = () => {
   const { user, username } = useContext(UserContext);
 
   return (
-    <div>
+    <>
       <Head>
         <title>Sign in</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="text-center">
-        <ul className="m-8">
-          <li>User: {user ? user.email : 'No user'}</li>
-          <li>Username: {username || 'No username'}</li>
-        </ul>
-        {user ? <SignOutButton /> : <SignInButton />}
-      </main>
-    </div>
+      {user ? <SignOutButton /> : <SignInButton />}
+    </>
   );
 };
 
@@ -37,7 +36,7 @@ function SignInButton() {
   };
 
   return (
-    <button className="btn-google" onClick={signInWithGoogle}>
+    <button className={buttonLight} onClick={signInWithGoogle}>
       <Image
         src="/google.png"
         alt="Google sign in icon"
@@ -50,5 +49,9 @@ function SignInButton() {
 }
 
 function SignOutButton() {
-  return <button onClick={() => signOut(auth)}>Sign Out</button>;
+  return (
+    <button onClick={() => signOut(auth)} className={buttonPrimary}>
+      Sign Out
+    </button>
+  );
 }
