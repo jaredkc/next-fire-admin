@@ -13,7 +13,7 @@ const buttonLight = `bg-white hover:bg-gray-50 ${buttonCommn}`;
 const buttonPrimary = `bg-indigo-600 text-white border-transparent hover:bg-indigo-700 ${buttonCommn}`;
 
 const SignIn: NextPage = () => {
-  const { user, username } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   return (
     <>
