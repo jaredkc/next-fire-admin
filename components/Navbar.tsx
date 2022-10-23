@@ -1,4 +1,5 @@
 import { signOut } from 'firebase/auth';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
@@ -16,7 +17,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between px-6 py-4 border-b">
+    <nav className="flex justify-between w-full px-6 py-4 border-b">
       <Link href="/">
         <a>AdminApp</a>
       </Link>
@@ -24,7 +25,7 @@ export default function Navbar() {
       {user && (
         <div>
           <button onClick={signOutNow}>Sign Out</button>
-          <img
+          <Image
             src={user?.photoURL || '/fpo-user.jpg'}
             alt={username || 'User photo placeholder'}
             width={32}

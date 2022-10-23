@@ -10,8 +10,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <UserContext.Provider value={userData}>
-        <Navbar />
-        <Component {...pageProps} />
+        <div className="flex flex-col items-center justify-center min-h-screen">
+          <Navbar />
+          <div className="flex flex-col items-center justify-center flex-1 w-full p-4 md:p-8">
+            <Component {...pageProps} />
+          </div>
+        </div>
         <Toaster />
       </UserContext.Provider>
     </>

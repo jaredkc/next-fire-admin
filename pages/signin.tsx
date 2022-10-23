@@ -11,13 +11,13 @@ const SignIn: NextPage = () => {
   const { user, username } = useContext(UserContext);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div>
       <Head>
         <title>Sign in</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center flex-1 w-full px-20 text-center">
+      <main className="text-center">
         <ul className="m-8">
           <li>User: {user ? user.email : 'No user'}</li>
           <li>Username: {username || 'No username'}</li>
