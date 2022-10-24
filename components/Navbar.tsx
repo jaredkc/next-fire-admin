@@ -37,7 +37,7 @@ export default function Navbar() {
 
       {!user && (
         <Link href="/signin">
-          <a>Log in</a>
+          <a>Sign in</a>
         </Link>
       )}
     </nav>

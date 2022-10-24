@@ -1,11 +1,11 @@
 import { signInWithPopup, signOut } from 'firebase/auth';
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
 import { useContext } from 'react';
-
+import Metafields from '../components/Metafields';
 import { UserContext } from '../lib/context';
 import { auth, googleAuthProvider } from '../lib/firebase';
+
 
 const buttonCommn =
   'inline-flex gap-3 items-center px-6 py-3 text-base font-medium border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2';
@@ -17,10 +17,7 @@ const SignIn: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Sign in</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Metafields title ="Sign in" />
 
       {user ? <SignOutButton /> : <SignInButton />}
     </>

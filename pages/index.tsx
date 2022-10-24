@@ -1,15 +1,12 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+import Metafields from '../components/Metafields';
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Head>
-        <title>NextFireAdmin</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Metafields />
 
       <main className="text-center">
         <h1 className="text-6xl font-bold">

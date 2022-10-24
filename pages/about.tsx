@@ -1,14 +1,11 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
+import Metafields from '../components/Metafields';
 
 const About: NextPage = () => {
   return (
     <div>
-      <Head>
-        <title>NextFireAdmin / About</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Metafields title ="About" />
 
       <main className="text-center">
         <h1 className="text-6xl font-bold">About NextFireAdmin</h1>
