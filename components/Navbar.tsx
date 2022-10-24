@@ -17,9 +17,9 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex items-center justify-between w-full px-6 py-4 bg-white border-b">
+    <nav className="flex items-center justify-between w-full px-6 py-4 text-sm bg-white border-b">
       <Link href="/">
-        <a>AdminApp</a>
+        <a className='px-2 py-1 font-semibold rounded bg-slate-700 text-slate-200'>AdminApp</a>
       </Link>
 
       {user && (
