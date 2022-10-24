@@ -8,6 +8,7 @@
     "deploy": "next build && firebase deploy --only hosting"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.12",
     "firebase": "^9.12.1",
     "next": "latest",
     "react": "18.1.0",
