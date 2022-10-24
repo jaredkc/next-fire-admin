@@ -10,7 +10,7 @@ const Products: NextPage = () => {
       <main className="text-center">
         <h1 className="text-4xl font-bold md:text-6xl">Products</h1>
         <div className="flex flex-col max-w-lg gap-8 mx-auto my-8 text-xl">
-          <AuthCheck permission="orders">
+          <AuthCheck permission="products">
             <p className="mt-3 text-2xl">Load orders from Firestore</p>
           </AuthCheck>
         </div>
