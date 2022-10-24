@@ -9,23 +9,25 @@ const Home: NextPage = () => {
       <Metafields />
 
       <main className="text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-          , <br />
+        <h1 className="text-4xl font-bold md:text-6xl">
+          Welcome to Next.js, <br />
           running on Firebase!
         </h1>
-
-        <p className="mt-3 text-2xl">
-          See the{' '}
-          <Link href="/about">
-            <a className="underline">about page</a>
-          </Link>{' '}
-          for routing example.
-        </p>
-        <button onClick={() => toast.success('hello toast!')}>Toast Notification</button>
+        <div className="flex flex-col max-w-lg gap-8 mx-auto my-8 text-xl">
+          <p>
+            Permissions are loaded from the user&apos;s document in Firestore, backed
+            up by Firestore rules on the server.
+          </p>
+          <p>
+            Notifications included with <code>react-hot-toast</code>,{' '}
+            <button
+              onClick={() => toast.success('hello toast!')}
+              className="font-semibold underline"
+            >
+              Toast me
+            </button>
+          </p>
+        </div>
       </main>
     </div>
   );
