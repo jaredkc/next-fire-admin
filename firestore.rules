@@ -2,16 +2,20 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    // allow read is needed for Next.js GetServerSideProps, not ideal for some use cases.
+
     match /{document=**} {
       allow read, write: if isAdmin();
     }
 
     match /products/{document=**} {
-      allow read, write: if hasPermission('products');
+      allow read;
+      allow write: if hasPermission('products');
     }
 
     match /orders/{document=**} {
-      allow read, write: if hasPermission('orders');
+      allow read;
+      allow write: if hasPermission('orders');
     }
 
     // Check if the user is an admin
