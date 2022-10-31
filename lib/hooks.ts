@@ -6,8 +6,9 @@ import { auth } from './firebase';
 // Custom hook to read auth record and users doc
 export function useUserData() {
   const [user] = useAuthState(auth);
-  const [username, setUsername] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [permissions, setPermissions] = useState({});
+  const [username, setUsername] = useState(null);
 
   useEffect(() => {
     // turn off realtime subscription
@@ -16,16 +17,18 @@ export function useUserData() {
     if (user) {
       const ref = doc(getFirestore(), 'users', user.uid);
       unsubscribe = onSnapshot(ref, (doc) => {
-        setUsername(doc.data()?.username);
         setPermissions(doc.data()?.permissions);
+        setUsername(doc.data()?.username);
       });
     } else {
-      setUsername(null);
       setPermissions({});
+      setUsername(null);
     }
+
+    setLoading(false);
 
     return unsubscribe;
   }, [user]);
 
-  return { user, username, permissions };
+  return { loading, permissions, user, username };
 }

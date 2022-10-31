@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import toast from 'react-hot-toast';
 import Metafields from '../components/Metafields';
 

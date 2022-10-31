@@ -13,7 +13,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         <div className="flex flex-col items-center justify-center min-h-screen">
           <Navbar />
           <div className="flex flex-col items-center justify-center flex-1 w-full p-4 bg-slate-50 md:p-8">
-            <Component {...pageProps} />
+            {userData.loading ? (
+              <h2 className="mt-3 text-2xl opacity-50">
+                Authenticating user...
+              </h2>
+            ) : (
+              <Component {...pageProps} />
+            )}
           </div>
         </div>
         <Toaster />

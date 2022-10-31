@@ -14,8 +14,6 @@ const ProductsClientSide: NextPage = () => {
 
   const productsFromFirestore = value?.docs.map(postToJSON) as Product[];
 
-  const jsonTest = { name: 'Jared', age: 37 };
-
   return (
     <div>
       <Metafields />
