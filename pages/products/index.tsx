@@ -21,8 +21,6 @@ type PageProps = {
 };
 
 const Products: NextPage<PageProps> = ({ products, errorMsg }) => {
-  console.log(products);
-
   return (
     <div>
       <Metafields title="Products" />
@@ -56,6 +54,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     );
     products = (await getDocs(productsQuery)).docs.map(postToJSON) as Product[];
   } catch (error) {
+    // TODO: Remove console.log in production
     console.log(error);
     errorMsg = JSON.stringify(error);
   }
