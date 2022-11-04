@@ -7,9 +7,6 @@
     "lint": "next lint",
     "deploy": "next build && firebase deploy --only hosting"
   },
-  "engines": {
-    "node": "16"
-  },
   "dependencies": {
     "@heroicons/react": "^2.0.12",
     "firebase": "^9.12.1",
