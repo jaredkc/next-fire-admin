@@ -18,21 +18,19 @@ export default function Navbar() {
 
   return (
     <nav className="flex flex-col items-center w-full gap-8 px-6 py-4 text-sm bg-white border-b sm:flex-row sm:justify-between">
-      <Link href="/">
-        <a className="px-2 py-1 font-semibold rounded bg-slate-700 text-slate-200">
-          AdminApp
-        </a>
+      <Link href="/" className="px-2 py-1 font-semibold rounded bg-slate-700 text-slate-200">
+        AdminApp
       </Link>
 
       <ul className="flex gap-4">
         <li>
-          <Link href="/products">
-            <a className="hover:underline">Products</a>
+          <Link href="/products" className="hover:underline">
+            Products
           </Link>
         </li>
         <li>
-          <Link href="/orders">
-            <a className="hover:underline">Orders</a>
+          <Link href="/orders" className="hover:underline">
+            Orders
           </Link>
         </li>
       </ul>
@@ -51,8 +49,8 @@ export default function Navbar() {
       )}
 
       {!user && (
-        <Link href="/signin">
-          <a className="hover:underline">Sign in</a>
+        <Link href="/signin" className="hover:underline">
+          Sign in
         </Link>
       )}
     </nav>
